@@ -1,0 +1,31 @@
+input {
+  width: 100%;
+}
+
+input[type=text] {
+  width: 25%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+button[type=submit] {
+  background-color: lightblue;
+  width: 10%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+table{
+  border: black;
+  width: 100%;
+  padding: 10px 20px;
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid #999;
+  padding: 0.5rem;
+  text-align: center;
+}

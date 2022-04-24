@@ -1,0 +1,72 @@
+<!-- Credit card form -->
+<div>
+  <div>
+    <div>
+      <div>
+        <h2>Credit Card System</h2>
+      </div>
+
+      <div><h3>Add</h3></div>
+      <div>
+        <form #creditCardForm="ngForm">
+          <!-- Text inputs for the Name -->
+          <div>
+            <div>
+              <div>
+                <label id="lblName" for="name">Name</label>
+                <div>
+                  <input type="text" id="name" name="name" [ngModel]="creditCardObj.name" #name="ngModel"/>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Text input for Card Number-->
+          <div class="form-outline mb-4">
+            <label id="lblCardName" for="cardNumber">Card Number</label>
+            <div>
+              <input type="text" id="cardNumber" name="cardNumber" [ngModel]="creditCardObj.cardNumber" #cardNumber="ngModel"/>
+            </div>
+          </div>
+
+          <!-- Text input for Limit -->
+          <div>
+            <label id="lblLimit" for="limit">Limit</label>
+            <div>
+              <input type="text" id="limit" name="limit" [ngModel]="creditCardObj.limit" #limit="ngModel" class="form-control" />
+            </div>
+          </div>
+
+          <button id="addCreditCard" type="submit" (click)="addCreditCard(creditCardForm)">Add</button>
+
+          <div content *ngIf="showCreditCardTable">
+            <div><h3>Existing Card</h3></div>
+            <div class="table-responsive table-scroll">
+              <table aria-describedby="showCreditCardDetails" class="table table-striped table-rounded">
+                <thead>
+                <tr>
+                  <th id="showName">Name</th>
+                  <th id="showCardNumber">Card Number</th>
+                  <th id="showBalance">Balance</th>
+                  <th id="showLimit">Limit</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let creditCard of creditCardList">
+                  <td>{{creditCard.name}}</td>
+                  <td>{{creditCard.cardNumber}}</td>
+                  <td>{{creditCard.balance}}</td>
+                  <td>{{creditCard.limit}}</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Credit card form -->
